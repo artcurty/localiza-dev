@@ -42,11 +42,24 @@ module.exports = {
   },
 
   //PUT
-  async update() {
+  async update(request, response) {
     //UPDATE
+    const { github_username, techs } = request.body;
+    const techsArray = queryToArray(techs);
+    const refresh = await dev.update(
+      { github_username },
+      { $set: { techs: techsArray } }
+    );
+
+    return response.json(refresh);
   },
+
   //DELETE
-  async destroy() {
-    //DELETE
+  async destroy(request, response) {
+    const { github_username } = request.query;
+
+    const dropDev = await dev.deleteOne({ github_username: github_username });
+
+    return response.json(dropDev);
   }
 };

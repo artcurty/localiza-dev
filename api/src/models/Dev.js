@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const pointSchema = require("./utils/PointSchema");
+
 const devSchema = new mongoose.Schema({
   name: String,
   github_username: String,

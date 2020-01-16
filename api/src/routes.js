@@ -15,5 +15,9 @@ routes.get("/search", SearchController.index);
 routes.get("/devs", DevController.index);
 //POST
 routes.post("/devs", DevController.store);
+//DELETE
+routes.delete("/devs", DevController.destroy);
+//PUT
+routes.put("/devs", DevController.update);
 
 module.exports = routes;
