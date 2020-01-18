@@ -1,4 +1,9 @@
-### Procura Dev
+
+
+
+<p align="center">
+<img src="https://github.com/CurtyY/localiza-dev/blob/master/front/src/logo-localiza.png?raw=true" width="400" height="400" />
+</p>
 
 Projeto construído em conjunto com [Diego Fernandes](http://github.com/diego3g), CTO na [@Rocketseat](https://github.com/Rocketseat)
 Procura dev, consiste em uma aplicação criada em Node.js, ReactJS ,React Native e MongoDB na versão clound para armazenamento de dados.
