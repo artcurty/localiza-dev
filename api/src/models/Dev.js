@@ -10,7 +10,8 @@ const devSchema = new mongoose.Schema({
   location: {
     type: pointSchema,
     index: "2dsphere"
-  }
+  },
+  password: String
 });
 
 module.exports = mongoose.model("dev", devSchema);

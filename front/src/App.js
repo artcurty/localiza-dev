@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import api from "./services/api";
-import DevItem from "./components/DevItem";
 import DevForm from "./components/DevForm";
+import logo from "./logo-localiza.png";
+import HomePage from "./pages/Index";
+import api from "./services/api";
 
 import "./global.css";
 import "./App.css";
@@ -9,6 +10,8 @@ import "./Sidebar.css";
 import "./Main.css";
 
 function App() {
+  const [selected, setSelected] = useState("");
+  const [visible, setVisible] = useState(true);
   const [devs, setDevs] = useState([]);
 
   async function handleAddDev(data) {
@@ -45,24 +48,53 @@ function App() {
   }, []);
 
   return (
-    <div id="app">
-      <aside>
-        <strong>Cadastrar</strong>
+    <>
+      {visible ? (
+        <div className="select-option">
+          <img src={logo} alt="" />
+          <div className="group-button">
+            <button
+              type="submit"
+              value="login"
+              onClick={e => {
+                setSelected(e.target.value);
+                setVisible(false);
+              }}
+            >
+              Login
+            </button>
+            <button
+              type="submit"
+              value="cadastro"
+              onClick={e => {
+                setSelected(e.target.value);
+                setVisible(false);
+              }}
+            >
+              Cadastro
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="back-selected">
+          <button
+            type="submit"
+            onClick={() => {
+              setVisible(true);
+              setSelected();
+            }}
+          >
+            Voltar
+          </button>
+        </div>
+      )}
+
+      {selected === "login" ? (
+        <HomePage devs={devs} deleteDev={deleteDev} editDev={editDev} />
+      ) : selected === "cadastro" ? (
         <DevForm onSubmit={handleAddDev} />
-      </aside>
-      <main>
-        <ul>
-          {devs.map(dev => (
-            <DevItem
-              key={dev._id}
-              dev={dev}
-              refresh={deleteDev}
-              editdev={editDev}
-            />
-          ))}
-        </ul>
-      </main>
-    </div>
+      ) : null}
+    </>
   );
 }
 
