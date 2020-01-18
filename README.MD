@@ -14,7 +14,7 @@ Assim com a ajuda da API do próprio Github, podemos acessar todos os dados rela
 
 #### Rodando Projeto
 
-Acessando cada diretório via terminal, rodando os comandos abaixo, é possível colocar de pé todas as versões.
+Basta acessar cada diretório (api, front e mobile) via terminal e rodar os comandos abaixo.
 
 ##### API
 
