@@ -17,15 +17,19 @@ Assim com a ajuda da API do próprio Github, podemos acessar todos os dados rela
 Basta acessar cada diretório (api, front e mobile) via terminal e rodar os comandos abaixo.
 
 ##### API
+Para instalar as dependencias da aplicação e iniciar logo depois:
 
-    yarn dev
+    yarn install && yarn dev
 
 ##### Front
+Para instalar as dependencias da aplicação e iniciar logo depois:
 
-    yarn start
+    yarn install && yarn start
 
 ##### Mobile
 
 A peculiaridade para a versão mobile é a necessidade da utilização do Expo, para visualização em seu celular ou em simuladores Android/IOS.
 
-    yarn start
+Para instalar as dependencias da aplicação e iniciar logo depois:
+
+    yarn install && yarn start
